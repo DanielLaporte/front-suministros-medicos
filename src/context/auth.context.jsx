@@ -19,27 +19,24 @@ function AuthProviderWrapper(props) {
     // If the token exists in the localStorage
     if (storedToken) {
       // Send a request to the server using axios
-      /* 
-        axios.get(
-          `${process.env.REACT_APP_SERVER_URL}/auth/verify`,
-          { headers: { Authorization: `Bearer ${storedToken}` } }
-        )
-        .then((response) => {})
-        */
-
-      // Or using a service
       authService
         .verify()
         .then((response) => {
-          // If the server verifies that JWT token is valid  ✅
-          const user = response.data;
+          // If the server verifies that JWT token is valid
+          const userData = response.data;
+
+          // Check the user's role and set it in the user object
+          const userRole = userData.role || "user";
+
           // Update state variables
           setIsLoggedIn(true);
           setIsLoading(false);
-          setUser(user);
+
+          // Set the user object with role information
+          setUser({ ...userData, role: userRole });
         })
         .catch((error) => {
-          // If the server sends an error response (invalid token) ❌
+          // If the server sends an error response (invalid token)
           // Update state variables
           setIsLoggedIn(false);
           setIsLoading(false);

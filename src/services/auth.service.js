@@ -8,7 +8,7 @@ class AuthService {
 
     // Automatically set JWT token on the request headers for every request
     this.api.interceptors.request.use((config) => {
-      // Retrieve the JWT token from the local storage
+      // Retrieve the JWT token from local storage
       const storedToken = localStorage.getItem("authToken");
 
       if (storedToken) {
@@ -21,24 +21,24 @@ class AuthService {
 
   login = (requestBody) => {
     return this.api.post("/auth/login", requestBody);
-    // same as
-    // return axios.post("http://localhost:5005/auth/login");
   };
 
   signup = (requestBody) => {
     return this.api.post("/auth/signup", requestBody);
-    // same as
-    // return axios.post("http://localhost:5005/auth/singup");
   };
 
   verify = () => {
     return this.api.get("/auth/verify");
-    // same as
-    // return axios.post("http://localhost:5005/auth/verify");
   };
+
+  createProduct = (productData) => {
+    return this.api.post("/api/products", productData);
+  };
+
+  // Agrega otros métodos según sea necesario para manejar la lógica de tu aplicación
+
 }
 
-// Create one instance (object) of the service
 const authService = new AuthService();
 
 export default authService;

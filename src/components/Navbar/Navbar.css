@@ -1,0 +1,69 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2819f5; /* Color de fondo de la barra de navegación */
+    color: white; /* Color del texto en la barra de navegación */
+    padding: 10px 20px;
+    height: 40px;
+  }
+  
+ /* Logo del lado izquierdo */
+ .navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    margin-right: 40px;
+  }
+  
+  
+  /* Barra de búsqueda */
+  .navbar-search {
+    display: flex;
+    align-items: center;
+    width: 300px;
+  }
+  
+  .navbar-search input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 200px;
+  }
+  
+  .navbar-search button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    
+  }
+  
+  /* Usuario autenticado y enlaces de autenticación */
+  .navbar-user,
+  .navbar-auth-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-user span {
+    margin-right: 10px;
+  }
+  
+  /* Botones */
+  button {
+    background-color: transparent;
+    color: white; /* Color del texto del botón */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  /* Estilo cuando se pasa el ratón por encima del botón */
+  button:hover {
+    background-color: #64aaf1; /* Color de fondo al pasar el ratón por encima */
+  }

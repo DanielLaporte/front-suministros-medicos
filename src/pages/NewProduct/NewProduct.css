@@ -1,0 +1,8 @@
+h1 {
+    color: black;
+}
+
+.container {
+    background-color: #f0f0f0; /* Cambia el color a gris claro como desees */
+    padding: 80px; /* Añade espacio de relleno para mejorar la apariencia */
+  }

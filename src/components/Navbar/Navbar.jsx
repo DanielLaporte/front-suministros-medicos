@@ -9,22 +9,42 @@ function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   return (
-    <nav>
-      <Link to="/">
-        <button>Home</button>
+    <nav className="navbar">
+      <div className="navbar-left">
+        <Link to="/">
+          <span className="navbar-logo">Suministros Medicos Laport</span>
+        </Link>
+      </div>
+
+      <div className="navbar-search">
+      <input type="text" placeholder="Buscar..." />
+      <button>Buscar</button>
+      </div>    
+
+          
+       <Link to="/Product">
+        <button>Productos</button>
       </Link>
 
+      <Link to="/Brands">
+        <button>Marcas</button>
+      </Link>
+
+      <Link to="/Promotions">
+        <button>Promociones</button>
+      </Link>
+
+      <Link to="/Bestsellers">
+        <button>Lo más vendido</button>
+      </Link>
+
+      
       {isLoggedIn && (
-        <>
-          <button onClick={logOutUser}>Logout</button>
+        <div className="navbar-user">
+        <span>Bienvenido, {user && user.name}</span>
+        <button onClick={logOutUser}>Logout</button>
+      </div>
 
-          <Link to="/profile">
-            <button>Profile</button>
-            {/* <img src="https://picsum.photos/id/402/200/300" style={{ width: 50, height: 50, borderRadius: 25}} alt="profile" /> */}
-          </Link>
-
-          <span>{user && user.name}</span>
-        </>
       )}
 
       {!isLoggedIn && (
