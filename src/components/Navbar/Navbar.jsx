@@ -17,17 +17,12 @@ function Navbar() {
       </div>
 
       <div className="navbar-search">
-      <input type="text" placeholder="Buscar..." />
-      <button>Buscar</button>
-      </div>    
+        <input type="text" placeholder="Buscar..." />
+        <button>Buscar</button>
+      </div>
 
-          
-       <Link to="/Product">
+      <Link to="/Product">
         <button>Productos</button>
-      </Link>
-
-      <Link to="/Brands">
-        <button>Marcas</button>
       </Link>
 
       <Link to="/Promotions">
@@ -38,24 +33,26 @@ function Navbar() {
         <button>Lo más vendido</button>
       </Link>
 
-      
-      {isLoggedIn && (
-        <div className="navbar-user">
-        <span>Bienvenido, {user && user.name}</span>
-        <button onClick={logOutUser}>Logout</button>
-      </div>
-
-      )}
+      {isLoggedIn && ( 
+  <div className="navbar-user">
+    <span>Bienvenido, {user.name}</span>
+    <span>Tienes permisos de, {user.role}</span>
+    {user.role === 'admin' && (
+      <Link to="/NewProduct">
+        <button className="black-text">Nuevo producto</button>
+      </Link>
+    )}
+    <button onClick={logOutUser}>Logout</button>
+  </div>
+)}
 
       {!isLoggedIn && (
         <>
           <Link to="/signup">
-            {" "}
-            <button>Sign Up</button>{" "}
+            <button>Sign Up</button>
           </Link>
           <Link to="/login">
-            {" "}
-            <button>Login</button>{" "}
+            <button>Login</button>
           </Link>
         </>
       )}
@@ -64,3 +61,6 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
+

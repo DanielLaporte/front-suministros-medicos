@@ -31,14 +31,12 @@ class AuthService {
     return this.api.get("/auth/verify");
   };
 
-  createProduct = (productData) => {
-    return this.api.post("/api/products", productData);
-  };
+  
 
   // Agrega otros métodos según sea necesario para manejar la lógica de tu aplicación
 
 }
 
-const authService = new AuthService();
+const authService = new AuthService(); 
 
 export default authService;

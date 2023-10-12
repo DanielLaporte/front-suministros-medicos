@@ -1,0 +1,47 @@
+.container {
+    background-color: #e3dbdb; /* Cambia el color a gris claro como desees */
+    padding: 80px; /* Añade espacio de relleno para mejorar la apariencia */
+  }
+
+  .mi-boton {
+    background-color: blue; /* Cambia el color de fondo a azul */
+    color: white; /* Cambia el color del texto a blanco */
+    padding: 10px 20px; /* Añade un poco de espacio alrededor del texto */
+    border: none; /* Elimina el borde del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  }
+  
+  /* Estilo para el botón al pasar el mouse (opcional) */
+  .mi-boton:hover {
+    background-color: darkblue; /* Cambia el color de fondo cuando el mouse está sobre el botón */
+  }
+  
+  /* En tu archivo ProductForm.css */
+.product-list {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los elementos de la lista */
+  }
+  
+  
+  
+  
+  .edit-button {
+    background-color: #2819f5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+  
+  .delete-button {
+    background-color: #2819f5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+  } 
+  
+  
+  

@@ -11,7 +11,6 @@ import Navbar from "./components/Navbar/Navbar";
 
 import ProductForm from "./components/ProductForm/ProductForm";
 import Product from "./components/Product/Product";
-import Brands from "./components/Brands/Brands";
 import Promotions from "./components/Promotions/Promotions";
 import Bestsellers from "./components/Bestsellers/Bestsellers";
 
@@ -44,15 +43,11 @@ function App() {
 
         <Route
           path="/ProductForm"
-          element={<ProductForm />}/>
+          element={<ProductForm />}/>c
 
         <Route
           path="/Product"
           element={<Product />}/>
-
-        <Route
-          path="/Brands"
-          element={<Brands />}/>
 
         <Route
           path="/Promotions"

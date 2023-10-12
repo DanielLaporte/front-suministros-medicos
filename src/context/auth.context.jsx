@@ -23,10 +23,11 @@ function AuthProviderWrapper(props) {
         .verify()
         .then((response) => {
           // If the server verifies that JWT token is valid
+          
           const userData = response.data;
 
           // Check the user's role and set it in the user object
-          const userRole = userData.role || "user";
+          const userRole = userData.role;
 
           // Update state variables
           setIsLoggedIn(true);
@@ -34,6 +35,8 @@ function AuthProviderWrapper(props) {
 
           // Set the user object with role information
           setUser({ ...userData, role: userRole });
+          
+          
         })
         .catch((error) => {
           // If the server sends an error response (invalid token)
