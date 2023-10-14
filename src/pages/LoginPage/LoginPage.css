@@ -1,3 +1,24 @@
-button[type="submit"] {
-    color: black;
+/* Estilo para el formulario */
+.form-container {
+  max-width: 40%; /* Ancho máximo del formulario */
+  margin: 40px auto 0; /* Centra el formulario horizontalmente */
+  padding: 40px; /* Espacio alrededor del formulario */
+  background-color: #13c2e5; /* Fondo del formulario */
+  border: 1px solid #0e9dc5; /* Borde del formulario */
+  border-radius: 30px; /* Bordes redondeados */
+}
+  @media (max-width: 767px) {
+    .form-container {
+      max-width: 80%;
+    }
   }
+
+/* Estilo para el título del formulario */
+.form-title {
+  font-size: 35px; /* Tamaño de fuente del título */
+  margin-bottom: 30px; /* Espacio debajo del título */
+}
+.form-control {
+  text-align: center;
+}
+

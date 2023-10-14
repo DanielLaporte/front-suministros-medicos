@@ -4,63 +4,80 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 
 function Navbar() {
-  // Subscribe to the AuthContext to gain access to
-  // the values from AuthContext.Provider's `value` prop
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+  
 
   return (
-    <nav className="navbar">
-      <div className="navbar-left">
-        <Link to="/">
-          <span className="navbar-logo">Suministros Medicos Laport</span>
-        </Link>
-      </div>
+    <nav className="navbar navbar-expand-lg justify-content-between">
+      <Link to="/">
+        <span className="navbar-logo">Suministro_Medicos_Laport</span>
+      </Link>
 
       <div className="navbar-search">
-        <input type="text" placeholder="Buscar..." />
-        <button>Buscar</button>
-      </div>
+          <input className="form-control" type="text" placeholder="Buscar..." />
+          <button className="btn btn-primary">Buscar</button>
+        </div>
 
-      <Link to="/Product">
-        <button>Productos</button>
-      </Link>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
 
-      <Link to="/Promotions">
-        <button>Promociones</button>
-      </Link>
+      
+      <div className="collapse navbar-collapse" id="navbarNav">
+        
 
-      <Link to="/Bestsellers">
-        <button>Lo más vendido</button>
-      </Link>
+        <Link to="/Product">
+          <button className="btn btn-primary mx-2">Productos</button>
+        </Link>
 
-      {isLoggedIn && ( 
-  <div className="navbar-user">
-    <span>Bienvenido, {user.name}</span>
-    <span>Tienes permisos de, {user.role}</span>
-    {user.role === 'admin' && (
-      <Link to="/NewProduct">
-        <button className="black-text">Nuevo producto</button>
-      </Link>
-    )}
-    <button onClick={logOutUser}>Logout</button>
-  </div>
-)}
+        <Link to="/Promotions">
+          <button className="btn btn-primary mx-2">Promociones</button>
+        </Link>
 
-      {!isLoggedIn && (
-        <>
-          <Link to="/signup">
-            <button>Sign Up</button>
-          </Link>
-          <Link to="/login">
-            <button>Login</button>
-          </Link>
-        </>
-      )}
+        <Link to="/Bestsellers">
+          <button className="btn btn-primary mx-2">Tendencia</button>
+        </Link>
+        
+
+        {isLoggedIn && (
+          <div className="navbar-user">
+            <span className="mr-2">Bienvenido, {user && user.name}</span>
+
+            {user && user.role === "admin" && (
+              <Link to="/NewProduct">
+                <button className="btn btn-success mx-2">Lanzamiento</button>
+              </Link>
+            )}
+            <button className="btn btn-primary" onClick={logOutUser}>
+              Logout
+            </button>
+          </div>
+        )}
+
+
+
+        {!isLoggedIn && (
+          <>
+            <Link to="/signup">
+              <button className="btn btn-info mx-2">Sign Up</button>
+            </Link>
+            <Link to="/login">
+              <button className="btn btn-info mx-2">Login</button>
+            </Link>
+          </>
+        )}
+        </div>
+      
     </nav>
   );
 }
 
 export default Navbar;
-
-
-

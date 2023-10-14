@@ -18,7 +18,7 @@ function NewProduct() {
   }
 
   return (
-    <div className="container">
+    <div className="container1">
       <h1>Nuevo Producto</h1>
       <ProductForm />
     </div>

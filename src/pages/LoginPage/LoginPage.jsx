@@ -20,25 +20,14 @@ function LoginPage() {
     e.preventDefault();
     const requestBody = { email, password };
 
-    // Send a request to the server using axios
-    /* 
-    axios.post(`${process.env.REACT_APP_SERVER_URL}/auth/login`)
-      .then((response) => {})
-    */
-
-    // Or using a service
     authService
       .login(requestBody)
       .then((response) => {
-        // If the POST request is successful store the authentication token,
-        // after the token is stored authenticate the user
-        // and at last navigate to the home page
         storeToken(response.data.authToken);
         authenticateUser();
         navigate("/");
       })
       .catch((error) => {
-        // If the request resolves with an error, set the error message in the state
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
       });
@@ -46,26 +35,45 @@ function LoginPage() {
 
   return (
     <div className="LoginPage">
-      <h1>Login</h1>
+      <div className="form-container text-center"> {/* Agregamos la clase text-center para centrar horizontalmente */}
+        <h1 className="form-title">Login</h1>
+        <form onSubmit={handleLoginSubmit}>
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">
+              Email:
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="form-control"
+              value={email}
+              onChange={handleEmail}
+            />
+          </div>
 
-      <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">
+              Password:
+            </label>
+            <input
+              type="password"
+              id="password"
+              className="form-control"
+              value={password}
+              onChange={handlePassword}
+            />
+          </div>
 
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
-
-        <button type="submit">Login</button>
-      </form>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-      <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+          <button type="submit" className="btn btn-primary">
+            Login
+          </button>
+        </form>
+      </div>
+      {errorMessage && <p className="error-message mt-3">{errorMessage}</p>}
+      <p className="mt-3">"¿Todavía no tienes una cuenta?"</p>
+      <Link to="/signup" className="btn btn-secondary">
+        Sign Up
+      </Link>
     </div>
   );
 }

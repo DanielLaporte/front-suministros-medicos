@@ -43,39 +43,75 @@ function SignupPage() {
   };
 
   return (
-    <div className="SignupPage">
-      <h1>Sign Up</h1>
+    <div className="form-container text-center">
+      <h1 className="my-4">Sign Up</h1>
 
       <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
 
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
+      <div className="mb-3">
+          <label htmlFor="name" className="form-label">
+            Name:
+          </label>
+          <input
+            type="text"
+            id="name"
+            className="form-control"
+            value={name}
+            onChange={handleName}
+          />
+        </div>
+        
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">
+            Email:
+          </label>
+          <input
+            type="email"
+            id="email"
+            className="form-control"
+            value={email}
+            onChange={handleEmail}
+          />
+        </div>
 
-        <label>Confirm Password:</label>
-        <input
-          type="password"
-          name="confirmPassword"
-          value={confirmPassword}
-          onChange={handleConfirmPassword}
-        />
+        <div className="mb-3">
+          <label htmlFor="password" className="form-label">
+            Password:
+          </label>
+          <input
+            type="password"
+            id="password"
+            className="form-control"
+            value={password}
+            onChange={handlePassword}
+          />
+        </div>
 
-        <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
+        <div className="mb-3">
+          <label htmlFor="confirmPassword" className="form-label">
+            Confirm Password:
+          </label>
+          <input
+            type="password"
+            id="confirmPassword"
+            className="form-control"
+            value={confirmPassword}
+            onChange={handleConfirmPassword}
+          />
+        </div>
 
-        <button type="submit">Sign Up</button>
+        
+        <button type="submit" className="btn btn-primary">
+          Sign Up
+        </button>
       </form>
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {errorMessage && <p className="error-message mt-3">{errorMessage}</p>}
 
-      <p>Already have an account?</p>
-      <Link to={"/login"}> Login</Link>
+      <p className="mt-3">¿Ya tienes una cuenta?</p>
+      <Link to="/login" className="btn btn-secondary">
+        Login
+      </Link>
     </div>
   );
 }

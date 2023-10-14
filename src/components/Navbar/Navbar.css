@@ -1,69 +1,43 @@
-/* Navbar container */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2819f5; /* Color de fondo de la barra de navegación */
-    color: white; /* Color del texto en la barra de navegación */
-    padding: 10px 20px;
-    height: 40px;
-  }
+/* Estilo para el logotipo en la barra de navegación */
+.navbar-logo {
+  font-size: 24px; /* Tamaño de fuente personalizado */
+  margin: 50px 30px 20px 95px;
+}
+
+/* Estilo para el formulario de búsqueda en la barra de navegación */
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+/* Ajusta el ancho de la barra de búsqueda */
+.navbar-search input[type="text"] {
+  width: 350px; /* Ajusta el valor según tus preferencias */
+ 
+}
+
+/* Estilo para el botón de búsqueda en el formulario */
+.navbar-search button {
+  margin-left: -15px; /* Espacio entre el campo de entrada y el botón */
+  background-color: #007BFF; /* Fondo azul */
+  color: #fff; /* Texto blanco */
+  border-top-left-radius: 0; /* Bordes superiores izquierdos rectos */
+  border-bottom-left-radius: 0; /* Bordes inferiores izquierdos rectos */
   
- /* Logo del lado izquierdo */
- .navbar-logo {
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    margin-right: 40px;
-  }
-  
-  
-  /* Barra de búsqueda */
-  .navbar-search {
-    display: flex;
-    align-items: center;
-    width: 300px;
-  }
-  
-  .navbar-search input[type="text"] {
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-    width: 200px;
-  }
-  
-  .navbar-search button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-    
-  }
-  
-  /* Usuario autenticado y enlaces de autenticación */
-  .navbar-user,
-  .navbar-auth-links {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-user span {
-    margin-right: 10px;
-  }
-  
-  /* Botones */
-  button {
-    background-color: transparent;
-    color: white; /* Color del texto del botón */
-    border: none;
-    border-radius: 5px;
-    padding: 8px 16px;
-    cursor: pointer;
-  }
-  
-  /* Estilo cuando se pasa el ratón por encima del botón */
-  button:hover {
-    background-color: #64aaf1; /* Color de fondo al pasar el ratón por encima */
-  }
+}
+
+/* Estilo para el contenedor del usuario en la barra de navegación */
+.navbar-user {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  margin: 10px 10px 10px 10px;
+}
+
+/* Espacio entre elementos en el contenedor del usuario */
+.navbar-user span {
+  margin-right: 20px; /* Espacio entre elementos de texto */
+}
+
+
+
