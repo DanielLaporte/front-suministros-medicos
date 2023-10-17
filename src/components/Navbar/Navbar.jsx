@@ -2,6 +2,8 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
+import miImagen from '../../image/logo laport.png';
+
 
 function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
@@ -10,12 +12,16 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg justify-content-between">
       <Link to="/">
-        <span className="navbar-logo">Suministro_Medicos_Laport</span>
-      </Link>
+  <img
+    src={miImagen}
+    alt="Logo de Suministro Médicos Laport"
+    className="navbar-logo-img" 
+  />
+</Link>
 
       <div className="navbar-search">
           <input className="form-control" type="text" placeholder="Buscar..." />
-          <button className="btn btn-primary">Buscar</button>
+          <button className="Botton1">🔍</button>
         </div>
 
       <button
@@ -33,32 +39,37 @@ function Navbar() {
       
       <div className="collapse navbar-collapse" id="navbarNav">
         
-
+          
         <Link to="/Product">
-          <button className="btn btn-primary mx-2">Productos</button>
+          <button className="Botton1">Productos</button>
         </Link>
 
         <Link to="/Promotions">
-          <button className="btn btn-primary mx-2">Promociones</button>
+          <button className="Botton1">Promociones</button>
         </Link>
 
         <Link to="/Bestsellers">
-          <button className="btn btn-primary mx-2">Tendencia</button>
+          <button className="Botton1">Tendencias</button>
         </Link>
         
 
         {isLoggedIn && (
           <div className="navbar-user">
-            <span className="mr-2">Bienvenido, {user && user.name}</span>
 
+            <span className="mr-2">Bienvenido, {user && user.name}</span>
+            
             {user && user.role === "admin" && (
+
+              
               <Link to="/NewProduct">
-                <button className="btn btn-success mx-2">Lanzamiento</button>
+                <button className="Botton1">Lanzamiento</button>
               </Link>
             )}
-            <button className="btn btn-primary" onClick={logOutUser}>
+            <button className="Botton1" onClick={logOutUser}>
               Logout
             </button>
+            
+
           </div>
         )}
 
@@ -67,10 +78,10 @@ function Navbar() {
         {!isLoggedIn && (
           <>
             <Link to="/signup">
-              <button className="btn btn-info mx-2">Sign Up</button>
+              <button className="Botton1">Sign Up</button>
             </Link>
             <Link to="/login">
-              <button className="btn btn-info mx-2">Login</button>
+              <button className="Botton1">Login</button>
             </Link>
           </>
         )}

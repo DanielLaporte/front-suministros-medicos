@@ -1,13 +1,13 @@
-/* Estilo para el título de las promociones */
-h2 {
-  text-align: center;
-  margin: 20px 0;
-}
-
-/* Estilo para las tarjetas de productos */
 .card {
-  border: 10px solid #ddd;
-  
+  transition: transform 0.8s; /* Agregar una transición para suavizar la animación */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.card:hover {
+  transform: scale(1.05); /* Ampliar la tarjeta al 105% del tamaño original cuando el cursor está sobre ella */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .card-title {
@@ -19,12 +19,91 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* Clase para espaciar las columnas */
-.mb-4 {
-  margin-bottom: 2 rem; /* Puedes ajustar el margen según tus preferencias */
-}
 
 .row {
-  background-color: #edecec; /* Color de fondo gris claro */
+  background-color: #eceded; /* Color de fondo gris claro */
   padding: 20px; /* Espacio interno alrededor del contenido de las tarjetas */
+}
+.random-product-images {
+  display: flex; /* Establece una disposición en línea horizontal */
+  flex-wrap: nowrap;
+   /* Evita que se envuelvan a la siguiente línea si no hay suficiente espacio */
+}
+
+ /* Ajusta la imagen de la barra blanca */
+.product-image {
+  margin-right: 20px; /* Espaciado entre las imágenes (ajusta según tus necesidades) */
+  max-height: 200px; /* Altura deseada en píxeles */
+  width:auto;
+  transition: transform 0.8s;
+}
+.product-image:hover {
+  transform: scale(1.05); /* Ampliar la tarjeta al 105% del tamaño original cuando el cursor está sobre ella */
+}
+
+.product-image2 {
+  margin-right: 20px; /* Espaciado entre las imágenes (ajusta según tus necesidades) */
+  max-height: 180px; /* Altura deseada en píxeles */
+  width:auto;
+  
+}
+
+
+.carousel {
+  height: 500px;
+  padding: 30px;
+  margin-bottom: -270px;
+  
+}
+
+/* Estilos para el título en el carrusel */
+.carousel h3 {
+  font-size: 30px;
+  color: #dce5ee;
+  margin-top: 40px;
+  margin-left: 200px;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.carousel-item img {
+  max-width: 100%; /* Asegura que la imagen no se desborde */
+  height: auto; /* Permite que la altura se ajuste automáticamente */
+  display: block; /* Elimina cualquier espacio no deseado debajo de la imagen */
+  margin: 0 auto; /* Centra la imagen horizontalmente dentro del contenedor */
+  margin-right: 350px;
+  margin-top: -130px;
+  border-radius: 30px;
+}
+
+.carousel-inner {
+  text-align: left; /* Alinea el texto a la izquierda */
+  
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+   transform: translateY(-20%); /* Centra verticalmente el botón */
+}
+
+
+/* Cambia el color de fondo y el color del icono de los botones (opcional) */
+.carousel-control-prev::before,
+.carousel-control-next::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px; /* Ajusta el ancho del área clickeable */
+  height: 100%; /* Ajusta la altura del área clickeable */
+  background: transparent;
+  z-index: 1; /* Coloca el elemento por encima del botón */
+}
+
+.random-product-images {
+  height: 250px; /* Ajusta la altura según tus necesidades */
+  /* Otros estilos */
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
 }

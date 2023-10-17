@@ -13,6 +13,7 @@ import ProductForm from "./components/ProductForm/ProductForm";
 import Product from "./components/Product/Product";
 import Promotions from "./components/Promotions/Promotions";
 import Bestsellers from "./components/Bestsellers/Bestsellers";
+import ProducDetails from "./components/ProductDetails/ProductDetails";
 
 function App() {
   return (
@@ -56,10 +57,18 @@ function App() {
         <Route
           path="/Bestsellers"
           element={<Bestsellers />}/>  
-       
+
+        <Route 
+        path="/ProductDetails/:id" 
+        element={<ProducDetails />}/>
+        
+
       </Routes>
+
     </div>
   );
 }
+
+
 
 export default App;

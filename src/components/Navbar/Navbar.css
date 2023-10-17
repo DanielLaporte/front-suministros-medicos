@@ -1,7 +1,5 @@
-/* Estilo para el logotipo en la barra de navegación */
-.navbar-logo {
-  font-size: 24px; /* Tamaño de fuente personalizado */
-  margin: 50px 30px 20px 95px;
+.navbar{
+  background-color: #cfe4fb;
 }
 
 /* Estilo para el formulario de búsqueda en la barra de navegación */
@@ -12,19 +10,22 @@
 
 /* Ajusta el ancho de la barra de búsqueda */
 .navbar-search input[type="text"] {
-  width: 350px; /* Ajusta el valor según tus preferencias */
- 
+  width: 600px; /* Ajusta el valor según tus preferencias */
+  border-radius: 10px;
+  margin-left: 5%;
 }
 
 /* Estilo para el botón de búsqueda en el formulario */
 .navbar-search button {
   margin-left: -15px; /* Espacio entre el campo de entrada y el botón */
-  background-color: #007BFF; /* Fondo azul */
-  color: #fff; /* Texto blanco */
-  border-top-left-radius: 0; /* Bordes superiores izquierdos rectos */
-  border-bottom-left-radius: 0; /* Bordes inferiores izquierdos rectos */
-  
+  background-color: white; /* Fondo azul */
+  color: white; /* Texto blanco */
+  border-radius: 10px; /* Bordes superiores izquierdos rectos */
+  height: 36.224px;
+  width: 50px;
+  padding: 8px 
 }
+
 
 /* Estilo para el contenedor del usuario en la barra de navegación */
 .navbar-user {
@@ -38,6 +39,70 @@
 .navbar-user span {
   margin-right: 20px; /* Espacio entre elementos de texto */
 }
+
+.navbar-logo-img {
+  width: 200px; /* Establece el ancho deseado */
+  height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+  margin-left: 10%; /* Agrega margen izquierdo deseado */
+  margin-right: 10px;
+  margin-bottom: -45px;
+  margin-top: -30px; /* Agrega margen derecho deseado */
+  transition: transform 0.2s;
+}
+.navbar-logo-img:hover {
+  transform: scale(1.1); /* Amplía el botón al 110% del tamaño original cuando el cursor está sobre él */
+}
+
+.Botton1 {
+  background-color: #007BFF; /* Color de fondo azul */
+  color: white; /* Color de texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 6px 10px; /* Espaciado interno (ajusta según tus necesidades) */
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 5px;
+  margin-left: 5px;
+  transition: transform 0.2s;
+}
+.Botton1:hover {
+  transform: scale(1.1); /* Amplía el botón al 110% del tamaño original cuando el cursor está sobre él */
+}
+
+@media (max-width: 768px) {
+  .navbar-logo-img {
+    width: 150px; /* Establece el ancho deseado para pantallas pequeñas */
+    margin-left: 10%; /* Ajusta el margen izquierdo para pantallas pequeñas */
+     /* Ajusta el margen derecho para pantallas pequeñas */
+  }
+
+  .navbar-search input[type="text"] {
+    width: 180px; /* Ajusta el valor según tus preferencias */
+   
+  }
+  
+  /* Estilo para el botón de búsqueda en el formulario */
+  .navbar-search button {
+    margin-left: -15px; /* Espacio entre el campo de entrada y el botón */
+    background-color: #fff; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    border-radius: 10px; /* Bordes superiores izquierdos rectos */
+    width: 50px;
+    padding: 8px 
+  }
+  .Botton1 {
+    background-color: #007BFF; /* Color de fondo azul */
+    color: white; /* Color de texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 6px 10px; /* Espaciado interno (ajusta según tus necesidades) */
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+}
+
 
 
 

@@ -11,6 +11,7 @@ function ProductForm() {
     price: '',
     category: '',
     brand: '',
+    promotional: false,
     image: null,  // Cambiado de 'imagen' a 'image'
   });
 
@@ -40,7 +41,7 @@ function ProductForm() {
     const { name, value } = e.target;
     setProductData({
       ...productData,
-      [name]: value,
+      [name]: name === 'promotional' ? value === 'true' : value,
     });
   };
 
@@ -53,6 +54,7 @@ function ProductForm() {
     formData.append('price', productData.price);
     formData.append('category', productData.category);
     formData.append('brand', productData.brand);
+    formData.append('promotional', productData.promotional);
     formData.append('image', productData.image);
 
     if (editingProduct) {
@@ -77,6 +79,7 @@ function ProductForm() {
             price: '',
             category: '',
             brand: '',
+            promotional: false,
             image: null,
           });
           setEditingProduct(null);
@@ -98,6 +101,7 @@ function ProductForm() {
             price: '',
             category: '',
             brand: '',
+            promotional: false,
             image: null,
           });
         })
@@ -115,6 +119,7 @@ function ProductForm() {
       price: product.price,
       category: product.category,
       brand: product.brand,
+      promotional: product.promotional,
       image: product.image,
     });
     setEditingProduct(product);
@@ -184,6 +189,18 @@ function ProductForm() {
               value={productData.category}
               onChange={handleChange}
             />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Promociones:</label>
+            <select
+              name="promotional"
+              className="form-control"
+              value={productData.promotional ? 'true' : 'false'}
+              onChange={handleChange}
+            >
+              <option value="true">Sí</option>
+              <option value="false">No</option>
+            </select>
           </div>
           <div className="mb-3">
             <label className="form-label">Imagen:</label>
