@@ -7,6 +7,7 @@ import { Carousel } from 'react-bootstrap';
 const API_URL = "http://localhost:5005";
 
 function Product() {
+  // eslint-disable-next-line
   const [products, setProducts] = useState([]);
   const [randomProducts, setRandomProducts] = useState([]);
   const location = useLocation();
