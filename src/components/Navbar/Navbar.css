@@ -1,5 +1,6 @@
 .navbar{
   background-color: #cfe4fb;
+  z-index: 100;
 }
 
 /* Estilo para el formulario de búsqueda en la barra de navegación */

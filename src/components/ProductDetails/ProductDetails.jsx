@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './ProductDetails.css';
 import { Link, useLocation, useParams } from 'react-router-dom'; // Importa useParams
+import LikeButton from '../Like/LikeButton';
 
 const API_URL = 'http://localhost:5005';
 
@@ -23,8 +24,8 @@ function ProductDetails() {
   }, [id]); // Asegúrate de que la solicitud se realice cuando cambia el id
 
   return (
-    <div className="container2">
-      <div className="row">
+    <div className="container3">
+      <div className="row3">
         
         {product && ( // Asegúrate de que haya un producto antes de mostrar los detalles
           <div className="col-md-3 mb-4" key={product._id}>
@@ -38,9 +39,13 @@ function ProductDetails() {
                     <p className="card-text">{product.description}</p>
                     <p className="card-text">Precio: ${product.price}</p>
                     <p className="card-text">Marca: {product.brand}</p>
+
+                    <LikeButton />
+                    
                     <Link to="/Buy">
                       <button className="Botton1">Comprar</button>
                     </Link>
+                    
                   </div>
                 )}
               </div>

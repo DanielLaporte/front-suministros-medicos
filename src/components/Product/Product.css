@@ -22,7 +22,7 @@
 
 .row {
   background-color: #eceded; /* Color de fondo gris claro */
-  padding: 20px; /* Espacio interno alrededor del contenido de las tarjetas */
+  padding: 25px; /* Espacio interno alrededor del contenido de las tarjetas */
 }
 .random-product-images {
   display: flex; /* Establece una disposición en línea horizontal */

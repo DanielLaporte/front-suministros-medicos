@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ProductForm.css';
 
-const API_URL = "http://localhost:5005"; // Cambia esta URL por la dirección de tu servidor
+const API_URL = "http://localhost:5005"; 
 
 function ProductForm() {
   const [productData, setProductData] = useState({
@@ -12,7 +12,7 @@ function ProductForm() {
     category: '',
     brand: '',
     promotional: false,
-    image: null,  // Cambiado de 'imagen' a 'image'
+    image: null, 
   });
 
   const [products, setProducts] = useState([]);
@@ -124,6 +124,7 @@ function ProductForm() {
     });
     setEditingProduct(product);
   };
+  
 
   const handleDelete = (productId) => {
     // Enviamos una solicitud DELETE para eliminar el producto
@@ -215,6 +216,7 @@ function ProductForm() {
           <button type="submit" className="btn btn-primary">
             {editingProduct ? 'Editar Producto' : 'Agregar Producto'}
           </button>
+          
         </form>
         <h2>Lista de Productos</h2>
         <ul className="list-group">

@@ -2,7 +2,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
-import miImagen from '../../image/logo laport.png';
+import miImagen from '../../image/logo laport (1).png'
 
 
 function Navbar() {
@@ -47,11 +47,6 @@ function Navbar() {
         <Link to="/Promotions">
           <button className="Botton1">Promociones</button>
         </Link>
-
-        <Link to="/Bestsellers">
-          <button className="Botton1">Tendencias</button>
-        </Link>
-        
 
         {isLoggedIn && (
           <div className="navbar-user">

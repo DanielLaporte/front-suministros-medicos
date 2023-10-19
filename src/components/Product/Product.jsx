@@ -11,7 +11,7 @@ function Product() {
   const [products, setProducts] = useState([]);
   const [randomProducts, setRandomProducts] = useState([]);
   const location = useLocation();
-
+  
   useEffect(() => {
     // Realizar una solicitud GET al servidor para obtener la lista de productos
     axios.get(`${API_URL}/api/products`)
@@ -28,7 +28,7 @@ function Product() {
         }
   
         // Tomamos los primeros 8 productos del arreglo mezclado
-        const first8RandomProducts = productsCopy.slice(0, 8);
+        const first8RandomProducts = productsCopy.slice(0, 24);
   
         // Actualizamos el estado para mostrar los productos aleatorios
         setRandomProducts(first8RandomProducts);
@@ -85,8 +85,9 @@ function Product() {
                     
                     
                     <Link to="/Buy">
-                  <button className="Botton1">Comprar</button>
-                </Link>
+                       <button className="Botton1">Comprar</button>
+                    </Link>
+                    
                   </div>
                   
                 )}

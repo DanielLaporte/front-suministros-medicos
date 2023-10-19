@@ -12,8 +12,8 @@ import Navbar from "./components/Navbar/Navbar";
 import ProductForm from "./components/ProductForm/ProductForm";
 import Product from "./components/Product/Product";
 import Promotions from "./components/Promotions/Promotions";
-import Bestsellers from "./components/Bestsellers/Bestsellers";
 import ProducDetails from "./components/ProductDetails/ProductDetails";
+import Buy from "./components/Buy/Buy";
 
 function App() {
   return (
@@ -54,13 +54,14 @@ function App() {
           path="/Promotions"
           element={<Promotions />}/>  
 
-        <Route
-          path="/Bestsellers"
-          element={<Bestsellers />}/>  
-
+        
         <Route 
         path="/ProductDetails/:id" 
         element={<ProducDetails />}/>
+
+       <Route 
+        path="/Buy" 
+        element={<Buy />}/>
         
 
       </Routes>
