@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Promotions.css';
 import { Link, useLocation } from 'react-router-dom';
 
-const API_URL = 'http://localhost:5005';
+const backendUrl = process.env.REACT_APP_SERVER_URL;
 
 function Promotions() {
   const [promotionalProducts, setPromotionalProducts] = useState([]);
@@ -12,7 +12,7 @@ function Promotions() {
   useEffect(() => {
     // Realizar una solicitud GET al servidor para obtener la lista de productos en promoción
     axios
-      .get(`${API_URL}/api/products/promotional`)
+      .get(`${backendUrl}/api/products/promotional`)
       .then((response) => {
         setPromotionalProducts(response.data);
       })

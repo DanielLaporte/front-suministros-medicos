@@ -1,20 +1,23 @@
+/*eslint-disable*/
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Product.css';
 import { Link, useLocation  } from "react-router-dom";
 import { Carousel } from 'react-bootstrap';
 
-const API_URL = "http://localhost:5005";
+//const API_URL = "http://localhost:5005";
+const backendUrl = process.env.REACT_APP_SERVER_URL;
+
 
 function Product() {
-  // eslint-disable-next-line
   const [products, setProducts] = useState([]);
   const [randomProducts, setRandomProducts] = useState([]);
   const location = useLocation();
   
   useEffect(() => {
     // Realizar una solicitud GET al servidor para obtener la lista de productos
-    axios.get(`${API_URL}/api/products`)
+    axios.get(`${backendUrl}/api/products`)
       .then((response) => {
         setProducts(response.data);
         

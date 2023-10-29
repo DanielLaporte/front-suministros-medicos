@@ -4,7 +4,7 @@ import './ProductDetails.css';
 import { Link, useLocation, useParams } from 'react-router-dom';
 
 
-const API_URL = 'http://localhost:5005';
+const backendUrl = process.env.REACT_APP_SERVER_URL;
 
 function ProductDetails() {
   const [product, setProduct] = useState(null);
@@ -14,7 +14,7 @@ function ProductDetails() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/api/products/${id}`)
+      .get(`${backendUrl}/api/products/${id}`)
       .then((response) => {
         setProduct(response.data);
       })

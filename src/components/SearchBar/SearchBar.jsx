@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const API_URL = "http://localhost:5005";
+const backendUrl = process.env.REACT_APP_SERVER_URL;
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -17,7 +17,7 @@ function SearchBar() {
 
       try {
         // Realizar una solicitud GET a la API para buscar productos en función del término de búsqueda en nombre y descripción
-        const response = await axios.get(`${API_URL}/api/products/search?term=${searchTerm}`);
+        const response = await axios.get(`${backendUrl}/api/products/search?term=${searchTerm}`);
         setSearchResults(response.data);
       } catch (error) {
         console.error('Error al obtener los resultados de búsqueda:', error);
