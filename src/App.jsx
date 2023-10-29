@@ -14,7 +14,7 @@ import Product from "./components/Product/Product";
 import Promotions from "./components/Promotions/Promotions";
 import PromotionsDetails from "./components/PromotionsDetails/PromotionsDetails";
 import ProducDetails from "./components/ProductDetails/ProductDetails";
-
+import Buy from "./components/Buy/Buy";
 
 function App() {
   return (
@@ -64,7 +64,9 @@ function App() {
         path="/ProductDetails/:id" 
         element={<ProducDetails />}/>
 
-      
+        <Route 
+        path="/Buy" 
+        element={<Buy />}/>
         
 
       </Routes>

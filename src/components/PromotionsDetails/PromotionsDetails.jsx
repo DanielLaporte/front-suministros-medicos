@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useLocation } from 'react-router-dom';
 
-const API_URL = "process.env.REACT_APP_SERVER_URL";
+const API_URL = "http://localhost:5005";
+
 
 function PromotionsDetails() {
   const [promotionalProducts, setPromotionalProducts] = useState([]);

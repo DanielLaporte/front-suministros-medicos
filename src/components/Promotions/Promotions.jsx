@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Promotions.css';
 import { Link, useLocation } from 'react-router-dom';
 
-const API_URL = "process.env.REACT_APP_SERVER_URL";
+const API_URL = 'http://localhost:5005';
 
 function Promotions() {
   const [promotionalProducts, setPromotionalProducts] = useState([]);

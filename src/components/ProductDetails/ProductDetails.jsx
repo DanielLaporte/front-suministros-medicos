@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './ProductDetails.css';
 import { Link, useLocation, useParams } from 'react-router-dom';
-import LikeButton from '../Like/LikeButton';
+
 
 const API_URL = 'http://localhost:5005';
 
