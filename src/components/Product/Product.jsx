@@ -17,7 +17,7 @@ function Product() {
   
   useEffect(() => {
     // Realizar una solicitud GET al servidor para obtener la lista de productos
-    axios.get(`${backendUrl}/api/products`)
+    axios.get(`${backendUrl}api/products`)
       .then((response) => {
         setProducts(response.data);
         
