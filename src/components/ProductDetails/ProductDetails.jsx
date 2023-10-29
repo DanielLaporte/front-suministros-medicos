@@ -4,7 +4,7 @@ import './ProductDetails.css';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import LikeButton from '../Like/LikeButton';
 
-const API_URL = "process.env.REACT_APP_SERVER_URL";
+const API_URL = 'http://localhost:5005';
 
 function ProductDetails() {
   const [product, setProduct] = useState(null);
