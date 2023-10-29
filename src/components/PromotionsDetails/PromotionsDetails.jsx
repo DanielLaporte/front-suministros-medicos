@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useLocation } from 'react-router-dom';
 
-const API_URL = "http://localhost:5005";
+const backendUrl = process.env.REACT_APP_SERVER_URL;
 
 
 function PromotionsDetails() {
@@ -12,7 +12,7 @@ function PromotionsDetails() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/api/products/promotional`)
+      .get(`${backendUrl}/api/products/promotional`)
       .then((response) => {
         setPromotionalProducts(response.data);
       })
