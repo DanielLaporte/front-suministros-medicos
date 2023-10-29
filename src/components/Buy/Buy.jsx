@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Importa useParams
+import './Buy.css';
 
 function Buy() {
   const [quantity, setQuantity] = useState(1); // Estado para la cantidad de productos
@@ -21,12 +23,15 @@ function Buy() {
   };
 
   return (
-    <div className="container">
+    <div className="card4">
       {purchaseSuccess ? (
         // Si la compra se realizó con éxito, muestra el mensaje y el botón de seguir comprando
         <div>
-          <p>Compra realizada con éxito</p>
-          <button>Seguir comprando</button>
+          <h1>¡Compra realizada con éxito!</h1>
+          <Link to="/">
+          <button className="Botton1">Seguir comprando</button>
+          </Link>
+          
         </div>
       ) : (
         // Si no se ha realizado la compra, muestra el formulario de compra
@@ -46,7 +51,7 @@ function Buy() {
               max="10" // Establece un límite de cantidad según tus necesidades
             />
           </div>
-          <button onClick={handlePurchase}>Terminar compra</button>
+          <button onClick={handlePurchase} className="button-terminar-compra">Terminar compra</button>
         </div>
       )}
     </div>

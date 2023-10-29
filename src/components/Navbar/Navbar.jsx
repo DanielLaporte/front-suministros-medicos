@@ -44,15 +44,20 @@ function Navbar() {
           <button className="Botton1">Productos</button>
         </Link>
 
-        <Link to="/Promotions">
+        <Link to="/PromotionsDetails">
           <button className="Botton1">Promociones</button>
         </Link>
 
         {isLoggedIn && (
           <div className="navbar-user">
-
-            <span className="mr-2">Bienvenido, {user && user.name}</span>
             
+            <Link to="/profile" className="mr-2">
+            <button className="Botton1">Perfil</button>
+            </Link>
+            
+            <span className="mr-2">Bienvenido, {user && user.name}</span>
+           
+
             {user && user.role === "admin" && (
 
               

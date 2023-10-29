@@ -1,24 +1,47 @@
+.card4 {
+  border: 1px solid #ccc; /* Borde de la carta */
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 10px; /* Espacio entre cartas */
+  padding: 10px; /* Relleno interno de la carta */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra de la carta */
+  background-color: #fff; /* Fondo de la carta */
+  transition: transform 0.2s; /* Transición al hacer hover */
 
-.card {
-    transition: transform 0.8s; /* Agregar una transición para suavizar la animación */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    min-height: 300px; /* Establece una altura mínima para las tarjetas, ajusta este valor según tus necesidades */
-  }
+  /* Estilos adicionales que desees agregar */
+}
+ 
+.card-title4 {
+  font-size: 30px;
+  margin-top: -80px;
+  margin-left: 0%;
+}
+.card-text41 {
+  font-size: 16px;
+  text-align: left;
+  margin-top: -250px;
+  margin-left: 36%;
   
-  .card:hover {
-    transform: scale(1.05); /* Ampliar la tarjeta al 105% del tamaño original cuando el cursor está sobre ella */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
+}
+.card-text42 {
+  font-size: 26px;
+  text-align: left;
+  margin-top: 0%;
+  margin-left: 36%;
+  color: green
   
-  .card-title {
-    font-weight: bold;
-  }
+}
+.card-text43 {
+  font-size: 20px;
+  text-align: left;
+  margin-left: 36%;
+  color:black
   
-  .card-text {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
+}
   
+  .product-image4 {
+    margin-left: -800px;
+    margin-top: -50px;
+    max-height: 350px;
+    min-height: 350px; /* Altura deseada en píxeles */
+    width:auto;  
+  }

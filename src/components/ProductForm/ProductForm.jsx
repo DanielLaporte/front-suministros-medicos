@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ProductForm.css';
 
-const API_URL = "http://localhost:5005"; 
+const API_URL = "process.env.REACT_APP_SERVER_URL";
 
 function ProductForm() {
   const [productData, setProductData] = useState({

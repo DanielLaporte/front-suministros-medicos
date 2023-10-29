@@ -46,8 +46,8 @@
   height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
   margin-left: 10%; /* Agrega margen izquierdo deseado */
   margin-right: 10px;
-  margin-bottom: -45px;
-  margin-top: -30px; /* Agrega margen derecho deseado */
+  margin-bottom: -35px;
+  margin-top: -20px; /* Agrega margen derecho deseado */
   transition: transform 0.2s;
 }
 .navbar-logo-img:hover {

@@ -1,53 +1,27 @@
-.container {
+.card4 {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 10%;
   }
   
-  .container h1 {
-    font-weight: bold;
-    font-size: 30px;
-  }
-  
-  .container div {
-    margin: 10px;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  input[type="number"] {
-    width: 40px; /* Ancho ajustable según tus necesidades */
-    padding: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
+/* Estilo para el botón "Terminar compra" */
+.button-terminar-compra {
+    background-color: #007BFF; /* Color de fondo azul */
+    color: white; /* Color de texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 6px 10px; /* Espaciado interno (ajusta según tus necesidades) */
     cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  .purchase-message {
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 14px;
+    margin-right: 5px;
+    margin-left: 5px;
     margin-top: 20px;
-  }
+    transition: transform 0.2s;
+}
   
-  .continue-shopping-button {
-    background-color: #28a745;
+  /* Estilo para cuando se pasa el ratón sobre el botón */
+  .button-terminar-compra:hover {
+    transform: scale(1.1); /* Cambia el color de fondo al pasar el ratón */
   }
-  
-  .continue-shopping-button:hover {
-    background-color: #1e7e34;
-  }
-  

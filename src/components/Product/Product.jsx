@@ -4,7 +4,7 @@ import './Product.css';
 import { Link, useLocation  } from "react-router-dom";
 import { Carousel } from 'react-bootstrap';
 
-const API_URL = "http://localhost:5005";
+const API_URL = "process.env.REACT_APP_SERVER_URL";
 
 function Product() {
   // eslint-disable-next-line
