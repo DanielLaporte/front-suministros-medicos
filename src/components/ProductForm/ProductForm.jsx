@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ProductForm.css';
 
-const API_URL = "http://localhost:5005";
+
+const backendUrl = process.env.REACT_APP_SERVER_URL;
 
 function ProductForm() {
   const [productData, setProductData] = useState({
@@ -28,7 +29,7 @@ function ProductForm() {
 
   useEffect(() => {
     // Fetch la lista de productos desde el servidor cuando el componente se monta
-    axios.get(`${API_URL}/api/products`)
+    axios.get(`${backendUrl}/api/products`)
       .then((response) => {
         setProducts(response.data);
       })
@@ -44,10 +45,10 @@ function ProductForm() {
       [name]: name === 'promotional' ? value === 'true' : value,
     });
   };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     const formData = new FormData();
     formData.append('name', productData.name);
     formData.append('description', productData.description);
@@ -57,21 +58,29 @@ function ProductForm() {
     formData.append('promotional', productData.promotional);
     formData.append('image', productData.image);
 
+    
+
     if (editingProduct) {
+      console.log("formData:", formData);
       // Si estamos editando un producto, enviamos una solicitud PUT para actualizar el producto existente
-      axios.put(`${API_URL}/api/products/${editingProduct._id}`, formData)
+      axios.put(`${backendUrl}/api/products/${editingProduct._id}`, formData) 
+      
         .then((response) => {
+          console.log("Respuesta del servidor:", response);
           // Actualizamos la lista de productos con el producto actualizado
           setProducts((prevProducts) => {
             const updatedProducts = prevProducts.map((product) => {
               if (product._id === response.data._id) {
                 return response.data;
+
+                
               }
               return product;
             });
             return updatedProducts;
           });
-
+          console.log("Producto actualizado:", response.data);
+          
           // Limpiamos el formulario y el estado de editingProduct
           setProductData({
             name: '',
@@ -85,11 +94,11 @@ function ProductForm() {
           setEditingProduct(null);
         })
         .catch((error) => {
-          console.error('Error al editar el producto:', error);
+          
         });
     } else {
       // Si no estamos editando, enviamos una solicitud POST para crear un nuevo producto
-      axios.post(`${API_URL}/api/products`, formData)
+      axios.post(`${backendUrl}/api/products`, formData)
         .then((response) => {
           // Agregamos el nuevo producto a la lista de productos
           setProducts((prevProducts) => [...prevProducts, response.data]);
@@ -128,7 +137,7 @@ function ProductForm() {
 
   const handleDelete = (productId) => {
     // Enviamos una solicitud DELETE para eliminar el producto
-    axios.delete(`${API_URL}/api/products/${productId}`)
+    axios.delete(`${backendUrl}/api/products/${productId}`)
       .then(() => {
         // Eliminamos el producto eliminado de la lista de productos
         setProducts((prevProducts) => prevProducts.filter((product) => product._id !== productId));

@@ -65,6 +65,7 @@ function Navbar() {
                 <button className="Botton1">Lanzamiento</button>
               </Link>
             )}
+            
             <button className="Botton1" onClick={logOutUser}>
               Logout
             </button>

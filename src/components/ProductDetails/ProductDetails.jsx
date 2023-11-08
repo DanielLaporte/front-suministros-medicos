@@ -3,12 +3,11 @@ import axios from 'axios';
 import './ProductDetails.css';
 import { Link, useLocation, useParams } from 'react-router-dom';
 
-
 const backendUrl = process.env.REACT_APP_SERVER_URL;
 
 function ProductDetails() {
   const [product, setProduct] = useState(null);
-  const [showMore, setShowMore] = useState(false); // Estado para controlar la visibilidad del texto completo
+  const [showMore, setShowMore] = useState(false);
   const { id } = useParams();
   const location = useLocation();
 
@@ -24,7 +23,18 @@ function ProductDetails() {
   }, [id]);
 
   const toggleShowMore = () => {
-    setShowMore(!showMore); // Cambia el estado de visibilidad del texto
+    setShowMore(!showMore);
+  };
+
+  const handleLikeButtonClick = () => {
+    axios
+      .put(`${backendUrl}/api/products/${id}/favorites`)
+      .then((response) => {
+        setProduct(response.data);
+      })
+      .catch((error) => {
+        console.error('Error al dar "Me Gusta" al producto:', error);
+      });
   };
 
   return (
@@ -43,6 +53,16 @@ function ProductDetails() {
                     </p>
                     <button className="Botton3" onClick={toggleShowMore}>
                       {showMore ? 'Leer menos' : 'Saber más'}
+                    </button>
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label"></label>
+                    <button
+                      type="button"
+                      className={`btn ${product.favorites ? 'btn-primary' : 'btn-secondary'}`}
+                      onClick={handleLikeButtonClick}
+                    >
+                      {product.favorites ? 'Quitar Me Gusta' : 'Me Gusta'}
                     </button>
                   </div>
                   <div>
